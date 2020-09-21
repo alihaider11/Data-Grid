@@ -1,0 +1,49 @@
+﻿@{
+        ViewData["Title"] = "Display Data";
+        string[] TableHeaders = new string[] {"Address ID"
+                        ,"Address Line"
+                        ,"City"
+                        ,"State Province ID"
+                        ,"Postal Code"
+                        ,"Spatial Location"
+                        ,"Row ID"
+                        ,"Modified Date"};
+}
+
+<div class="table">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                if (Model != null)
+                {
+                    foreach (var Data in Model)
+                    {
+                        <tr>
+                            <td>@Data.AddressID</td>
+                            <td>@Data.AddressLine</td>
+                            <td>@Data.City</td>
+                            <td>@Data.StateProvinceID</td>
+                            <td>@Data.PostalCode</td>
+                            <td>@Data.SpatialLocation</td>
+                            <td>@Data.RowID</td>
+                            <td>@Data.ModifiedDate</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
