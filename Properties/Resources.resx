@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ConnectionString" xml:space="preserve">
-    <value>Data Source="DESKTOP-CFD9UAA"; database="AdventureWorks2019"; integrated security = SSPI;</value>
+    <value>Data Source="192.168.167.220"; database="WideWorldImporters"; integrated security = false; User ID=SA; Password=Password789;</value>
     <comment>SQL Server Connection </comment>
   </data>
 </root>

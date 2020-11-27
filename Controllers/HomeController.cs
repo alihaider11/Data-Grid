@@ -38,18 +38,19 @@ namespace Data_Grid.Controllers
             {
                 con.Open();
                 com.Connection = con;
-                com.CommandText = "SELECT TOP (1000) [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode],[SpatialLocation],[rowguid],[ModifiedDate] FROM [AdventureWorks2019].[Person].[Address]";
+                com.CommandText = "SELECT TOP (1000) [CustomerID],[CustomerName],[DeliveryAddressLine1],[DeliveryAddressLine2],[DeliveryPostalCode],[DeliveryLocation],[PostalAddressLine1],[PostalAddressLine2],[PostalPostalCode],[LastEditedBy],[PhoneNumber],[FaxNumber],[AccountOpenedDate],[WebsiteURL] FROM [WideWorldImporters].[Sales].[Customers]";
+                //com.CommandText = "SELECT TOP (1000) [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode],[SpatialLocation],[rowguid],[ModifiedDate] FROM [AdventureWorks2019].[Person].[Address]";
                 dr = com.ExecuteReader();
                 while (dr.Read())
                 {
-                    addresses.Add(new Address() {AddressID = dr["AddressID"].ToString()
-                    ,AddressLine = dr["AddressLine1"].ToString()
-                    ,City = dr["City"].ToString()
-                    ,StateProvinceID = dr["StateProvinceID"].ToString()
-                    ,PostalCode = dr["PostalCode"].ToString()
-                    ,SpatialLocation = dr["SpatialLocation"].ToString()
-                    ,RowID = dr["rowguid"].ToString()
-                    ,ModifiedDate = dr["ModifiedDate"].ToString()
+                    addresses.Add(new Address() {AddressID = dr["CustomerID"].ToString()
+                    ,AddressLine = dr["CustomerName"].ToString()
+                    ,City = dr["DeliveryAddressLine1"].ToString()
+                    ,StateProvinceID = dr["PhoneNumber"].ToString()
+                    ,PostalCode = dr["FaxNumber"].ToString()
+                    ,SpatialLocation = dr["DeliveryAddressLine2"].ToString()
+                    ,RowID = dr["WebsiteURL"].ToString()
+                    ,ModifiedDate = dr["AccountOpenedDate"].ToString()
                     });
                 }
                 con.Close();

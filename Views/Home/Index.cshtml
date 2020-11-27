@@ -1,17 +1,17 @@
 ﻿@{
-        ViewData["Title"] = "Display Data";
-        string[] TableHeaders = new string[] {"Address ID"
-                        ,"Address Line"
-                        ,"City"
-                        ,"State Province ID"
-                        ,"Postal Code"
-                        ,"Spatial Location"
-                        ,"Row ID"
-                        ,"Modified Date"};
+    ViewData["Title"] = "Display Data";
+    string[] TableHeaders = new string[] {"CustomerID"
+                        ,"CustomerName"
+                        ,"Address 1"
+                        ,"PhoneNumber"
+                        ,"FaxNumber"
+                        ,"Address 2"
+                        ,"WebsiteURL"
+                        ,"AccountOpenedDate"};
 }
 
-<div class="table">
-    <table class="table table-bordered table-hover">
+<div class="table" style="max-height:650px; height:650px;margin-top:50px;">
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 @{
@@ -33,11 +33,11 @@
                     {
                         <tr>
                             <td>@Data.AddressID</td>
-                            <td>@Data.AddressLine</td>
+                            <td style="width:100px;">@Data.AddressLine</td>
                             <td>@Data.City</td>
                             <td>@Data.StateProvinceID</td>
                             <td>@Data.PostalCode</td>
-                            <td>@Data.SpatialLocation</td>
+                            <td style="width:50px;">@Data.SpatialLocation</td>
                             <td>@Data.RowID</td>
                             <td>@Data.ModifiedDate</td>
                         </tr>
